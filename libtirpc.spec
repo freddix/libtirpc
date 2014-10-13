@@ -1,11 +1,11 @@
 Summary:	Transport Independent RPC Library
 Name:		libtirpc
-Version:	0.2.4
+Version:	0.2.5
 Release:	1
 License:	BSD-like
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/libtirpc/%{name}-%{version}.tar.bz2
-# Source0-md5:	847995e8d002cbf1387bda05947be086
+# Source0-md5:	8cd41a5ef5a9b50d0fb6abb98af15368
 URL:		http://sourceforge.net/projects/libtirpc/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -46,6 +46,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
+
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
